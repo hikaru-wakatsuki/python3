@@ -1,7 +1,7 @@
 import sys
 
 
-def ft_command_quest():
+def ft_command_quest() -> None:
     print("=== Command Quest ===")
     argc: int = len(sys.argv)
     if argc == 1:
