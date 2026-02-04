@@ -25,8 +25,8 @@ def ft_achievement_tracker() -> None:
     rare_bob: set[str] = set.difference(set.difference(bob, charlie), alice)
     rare_charlie: set[str] = set.difference(set.difference(charlie, alice),
                                             bob)
-    print(f"Rare achievements (1 player): {set.union(rare_alice, rare_bob,
-                                                     rare_charlie)}")
+    print(f"Rare achievements (1 player): "
+          f"{set.union(rare_alice, rare_bob, rare_charlie)}")
     print()
     print(f"Alice vs Bob common: {set.intersection(alice, bob)}")
     print(f"Alice unique: {set.difference(alice, bob)}")
