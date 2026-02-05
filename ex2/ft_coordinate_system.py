@@ -16,11 +16,13 @@ def distance_3d(p1: tuple[int, int, int], p2: tuple[int, int, int]) -> float:
 def parse_coordinate(coord_str: str) -> tuple[int, int, int] | None:
     try:
         parts: list[str] = coord_str.split(",")
+        if len(parts) != 3:
+            raise ValueError("Coordinate must contain exactly 3 values")
         x: int = int(parts[0])
         y: int = int(parts[1])
         z: int = int(parts[2])
         return (x, y, z)
-    except Exception as e:
+    except ValueError as e:
         print("Error parsing coordinates:", e)
         print(f"Error details - Type: {e.__class__.__name__}, Args: {e.args}")
 
