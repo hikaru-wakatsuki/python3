@@ -1,6 +1,5 @@
 def ft_analytics_dashboard() -> None:
     print('=== Game Analytics Dashboard ===')
-    # players: list[str] = ["alice", "bob", "charlie", "diana"]
     scores: dict[str, int] = {
         "alice": 2300,
         "bob": 1800,
