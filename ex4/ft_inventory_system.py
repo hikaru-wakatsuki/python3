@@ -4,6 +4,8 @@ import sys
 def create_inventory() -> dict[str, int] | None:
     try:
         argc = len(sys.argv)
+        if argc == 1:
+            return None
         inventory: dict[str, int] = {}
         i = 1
         while i < argc:
@@ -56,8 +58,8 @@ def ft_inventory_system() -> None:
             categories["Moderate"].update({key: value})
         else:
             categories["Scarce"].update({key: value})
-    print(f"Moderate: {categories.get("Moderate")}")
-    print(f"Scarce: {categories.get("Scarce")}")
+    print(f"Moderate: {categories.get('Moderate')}")
+    print(f"Scarce: {categories.get('Scarce')}")
     print()
     print("=== Management Suggestions ===")
     restock: list[str] = []
