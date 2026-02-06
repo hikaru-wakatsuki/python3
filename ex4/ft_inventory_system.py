@@ -14,7 +14,9 @@ def create_inventory() -> dict[str, int] | None:
                 raise ValueError("Invalid item format")
             key: str = parts[0]
             value: int = int(parts[1])
-            inventory[key] = value
+            if inventory.get(key) is None:
+                inventory[key] = 0
+            inventory[key] += value
             i += 1
         return inventory
     except ValueError as e:
